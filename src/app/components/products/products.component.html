@@ -1,0 +1,14 @@
+<div id="all-products">
+  <div id="single-product-area">
+    <h2 id="all-title">Choose a product to edit</h2>
+  </div>
+
+  <ul class="form-group">
+    <li *ngFor="let product of products" class="list-group-item">
+      <span>item# {{ product.id }} is: </span>
+
+      <a [routerLink]="['/product', product.id]">{{ product.name }}</a>
+      <span> for ${{ product.price }} </span>
+    </li>
+  </ul>
+</div>

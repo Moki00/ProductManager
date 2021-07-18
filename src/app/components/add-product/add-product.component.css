@@ -1,0 +1,28 @@
+#all-products {
+  background-color: rebeccapurple;
+  border: 3px solid black;
+}
+
+#add-product {
+  background-color: royalblue;
+  border: 3px solid black;
+  padding: 20px;
+}
+
+#add-title,
+#all-title {
+  text-align: center;
+}
+
+#add-form {
+  width: 60%;
+}
+
+.list-group-item,
+input {
+  background-color: bisque;
+}
+
+.list-group-item {
+  width: 80%;
+}

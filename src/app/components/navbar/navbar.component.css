@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 3px;
+}
+
+#navbarText {
+  color: aliceblue;
+  text-shadow: 3px;
+}
+
+a {
+  color: white;
+  font-weight: bolder;
+}

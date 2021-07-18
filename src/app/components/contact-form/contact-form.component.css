@@ -1,0 +1,26 @@
+input {
+  width: 50%;
+  background-color: bisque;
+}
+
+#contactmethod {
+  background-color: bisque;
+  left: 10px;
+  border: 2px black solid;
+  border-radius: 5px;
+}
+
+.checkbox {
+  background-color: black;
+  position: relative;
+  text-align: center;
+  display: grid;
+  left: 10px;
+  width: 80%;
+  border: 2px aqua solid;
+  border-radius: 5px;
+}
+
+#subPage {
+  padding: 20px;
+}

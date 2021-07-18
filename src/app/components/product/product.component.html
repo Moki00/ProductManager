@@ -1,0 +1,78 @@
+<div id="editProduct">
+  <h1>Edit this Product</h1>
+
+  <form #f="ngForm" *ngIf="product">
+    Id:
+    <input
+      value="{{ product.id }}"
+      name="id"
+      id="id"
+      type="text"
+      class="form-control"
+      disabled
+    /><br />
+
+    <div class="form-group">
+      <label for="name"> Name:</label>
+      <input
+        [(ngModel)]="product.age"
+        #name="ngModel"
+        required
+        minlength="3"
+        maxlength="19"
+        name="name"
+        id="name"
+        type="text"
+        class="form-control"
+        pattern="^[a-zA-Z0-9-_]*$"
+      />
+      <div class="alert alert-danger" *ngIf="!name.valid && name.dirty">
+        <div *ngIf="name.errors?.required">Name is required.</div>
+        <div *ngIf="name.errors?.minlength">
+          Name must be at least 3 characters.
+        </div>
+        <div *ngIf="name.errors?.pattern">
+          _underscore and -dash are the only allowed special characters.
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="form-group">
+      <label for="price"> Price:</label>
+      <input
+        [(ngModel)]="product.price"
+        #price="ngModel"
+        required
+        minlength="1"
+        maxlength="9"
+        type="text"
+        name="price"
+        id="price"
+        class="form-control"
+        pattern="^((\d|[1-9]\d+)(\.\d{1,2})?|\.\d{1,2})$"
+      />
+      <div class="alert alert-danger" *ngIf="!price.valid && price.dirty">
+        <div *ngIf="price.errors?.required">Price is required.</div>
+        <div *ngIf="price.errors?.minlength">
+          Price must be at least 1 number.
+        </div>
+        <div *ngIf="price.errors?.pattern">
+          Price good examples: 1 or 1.2 or 1.23 ...& bad examples: 00.1 or 0.123
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="btn btn-primary"
+      [disabled]="!f.valid"
+      (click)="updateProduct(f.value)"
+    >
+      Update Product
+    </button>
+    <!-- <span>{{ f.value | json }}</span> -->
+
+    <button class="btn btn-warning" (click)="cancel()">Cancel</button>
+    <button class="btn btn-danger" (click)="deleteProduct()">Delete</button>
+  </form>
+</div>
